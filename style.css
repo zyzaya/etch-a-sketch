@@ -1,0 +1,9 @@
+#container {
+    display: grid;
+    width: 960px;
+    height: 960px;
+}
+
+.gridItem {
+    background-color: blue;
+}
