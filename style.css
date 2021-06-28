@@ -4,6 +4,10 @@
     height: 960px;
 }
 
+body {
+    background-color: gray;
+}
+
 .gridItem {
-    background-color: blue;
+    background-color:white;
 }
