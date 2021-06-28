@@ -15,14 +15,13 @@ function changeColor() {
     } else {
         c = window.getComputedStyle(this).backgroundColor;
         let rgb = c.match(/\d+/g);
-        console.log(rgb);
         let r = parseInt(rgb[0]) - INCREMENT;
         r = r < 0 ? 0 : r;
         let g = parseInt(rgb[1]) - INCREMENT;
         g = g < 0 ? 0 : g;
         let b = parseInt(rgb[2]) - INCREMENT;
         b = b < 0 ? 0 : b;
-        this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     }
 }
 
@@ -39,5 +38,16 @@ function createGrid(size) {
         container.appendChild(gridItem);
     }
 }
+
+function newGrid() {
+    let size = -1;
+    while (isNaN(size) || size < 0 || size > 100) {
+        size = prompt("Enter a number between 1 and 100:");
+    }
+    createGrid(size);
+}
+
+let resetGrid = document.querySelector('#resetGrid')
+resetGrid.addEventListener('click', newGrid);
 
 createGrid(16);
